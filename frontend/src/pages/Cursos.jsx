@@ -34,8 +34,12 @@ export default function Cursos() {
         {cursos.map(c => (
           <div key={c.id} className="bg-white rounded-xl shadow border border-gray-100 overflow-hidden">
             {c.imagen && (
-              <img src={c.imagen} alt={c.nombre}
-                className="w-full h-44 object-cover" />
+              <img 
+                /* CONFIGURACIÓN AQUÍ: Apunta siempre al backend de Render */
+                src={c.imagen.startsWith('http') ? c.imagen : `https://examen-03-3oi4.onrender.com${c.imagen}`} 
+                alt={c.nombre}
+                className="w-full h-44 object-cover" 
+              />
             )}
             <div className="p-5">
               <div className="flex justify-between items-start mb-2">

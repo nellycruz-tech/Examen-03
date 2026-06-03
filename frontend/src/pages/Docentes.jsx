@@ -30,7 +30,8 @@ export default function Docentes() {
           <div key={d.id} className="bg-white rounded-xl shadow p-5 border border-gray-100">
             {d.imagen && (
               <img
-                src={d.imagen}
+                /* CONFIGURACIÓN AQUÍ: Si ya viene con http usa d.imagen, si no, le añade la URL de Render antes */
+                src={d.imagen.startsWith('http') ? d.imagen : `https://examen-03-3oi4.onrender.com${d.imagen}`}
                 alt={d.nombre}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
